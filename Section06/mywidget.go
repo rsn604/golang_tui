@@ -1,6 +1,3 @@
-//
-// mywidget.go
-//
 package main
 
 import (
