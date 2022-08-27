@@ -1,3 +1,4 @@
+SHELL=/bin/bash
 GOBUILD=go build
 MAIN_PROG=listdbg
 LOAD_PROG=loaddb
@@ -7,11 +8,11 @@ TARGET=target
 
 # ---------------------------------------------------
 clean:
-	@rm $(TARGET)/*
-	@rm $(MAIN_PROG)
-	@rm $(LOAD_PROG)
-	@rm $(MAIN_PROG).sh
-	@rm $(LOAD_PROG).sh
+	-@rm $(TARGET)/*
+	-@rm $(MAIN_PROG)
+	-@rm $(LOAD_PROG)
+	-@rm $(MAIN_PROG).sh
+	-@rm $(LOAD_PROG).sh
 
 # ---------------------------------------------------
 gofmt:
