@@ -20,6 +20,7 @@ gofmt:
 
 # ---------------------------------------------------
 build:
+	mkdir -p $(TARGET)
 	$(GOBUILD) -o $(MAIN_PROG) $(MAIN)
 	$(GOBUILD) -o $(LOAD_PROG) $(LOAD)
 	@cp scripts/linux/listdbg.sh .
@@ -28,6 +29,7 @@ build:
 
 # ---------------------------------------------------
 build-win64:
+	mkdir -p $(TARGET)
 	GOOS=windows GOARCH=amd64 $(GOBUILD) -o $(MAIN_PROG)64.exe $(MAIN)
 	GOOS=windows GOARCH=amd64 $(GOBUILD) -o $(LOAD_PROG)64.exe $(LOAD) 
 	@cp scripts/win64/listdbg64.bat .
@@ -39,6 +41,7 @@ build-win64:
 	@rm listdbg64.exe
 
 build-win32:
+	mkdir -p $(TARGET)
 	GOOS=windows GOARCH=386 $(GOBUILD) -o $(MAIN_PROG)32.exe $(MAIN)
 	GOOS=windows GOARCH=386 $(GOBUILD) -o $(LOAD_PROG)32.exe $(LOAD)
 	@cp scripts/win32/listdbg32.bat .
@@ -51,6 +54,7 @@ build-win32:
 
 # ---------------------------------------------------
 build-arm6:
+	mkdir -p $(TARGET)
 	GOOS=linux GOARCH=arm GOARM=6 $(GOBUILD) -o $(MAIN_PROG)_arm6 $(MAIN)
 	GOOS=linux GOARCH=arm GOARM=6 $(GOBUILD) -o $(LOAD_PROG)_arm6 $(LOAD)
 	@cp scripts/linux_arm6/listdbg_arm6.sh .
@@ -62,6 +66,7 @@ build-arm6:
 	@rm loaddb_arm6
 # ---------------------------------------------------
 build-arm7:
+	mkdir -p $(TARGET)
 	GOOS=linux GOARCH=arm GOARM=7 $(GOBUILD) -o $(MAIN_PROG)_arm7 $(MAIN)
 	GOOS=linux GOARCH=arm GOARM=7 $(GOBUILD) -o $(LOAD_PROG)_arm7 $(LOAD)
 	@cp scripts/linux_arm7/listdbg_arm7.sh .
@@ -74,6 +79,7 @@ build-arm7:
 
 # ---------------------------------------------------
 build-arm64:
+	mkdir -p $(TARGET)
 	GOOS=linux GOARCH=arm64 $(GOBUILD) -o $(MAIN_PROG)_arm64 $(MAIN)
 	GOOS=linux GOARCH=arm64 $(GOBUILD) -o $(LOAD_PROG)_arm64 $(LOAD)
 	@cp scripts/linux_arm64/listdbg_arm64.sh .
