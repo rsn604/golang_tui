@@ -15,7 +15,9 @@ import (
 var isLastItem bool
 
 // -------------------------------------------------
-//  Paging
+//
+//	Paging
+//
 // -------------------------------------------------
 func (self *Detail) firstPage(common *Common) bool {
 	return common.selectedItem == 1
@@ -43,7 +45,9 @@ func (self *Detail) priorPage(common *Common) {
 }
 
 // -------------------------------------------------
-//  Category
+//
+//	Category
+//
 // -------------------------------------------------
 func (self *Detail) getCategoryList(pages *tview.Pages, common *Common, currentCategory string, btnCategory *tview.Button) {
 	manager := listdb.GetManager(common.databaseName)
@@ -80,7 +84,9 @@ func (self *Detail) getCategoryList(pages *tview.Pages, common *Common, currentC
 }
 
 // -------------------------------------------------
-//  Set button label
+//
+//	Set button label
+//
 // -------------------------------------------------
 func (self *Detail) setButtonLabel(label string, common *Common) string {
 	flen := runewidth.StringWidth(label)
@@ -92,7 +98,9 @@ func (self *Detail) setButtonLabel(label string, common *Common) string {
 }
 
 // -------------------------------------------------
-//  Set field to invoke Browser
+//
+//	Set field to invoke Browser
+//
 // -------------------------------------------------
 func (self *Detail) getIntentPath(command string) string {
 	path, err := exec.LookPath(command)
@@ -117,7 +125,9 @@ func (self *Detail) setFieldIntent(fieldName string, editField *tview.InputField
 }
 
 // -------------------------------------------------
-//  Execute update, delete, insert
+//
+//	Execute update, delete, insert
+//
 // -------------------------------------------------
 func (self *Detail) execute(pages *tview.Pages, listItem *listdb.ListItem, common *Common, msg string) {
 	flag := msg[:3]
@@ -154,28 +164,36 @@ func (self *Detail) execute(pages *tview.Pages, listItem *listdb.ListItem, commo
 }
 
 // -------------------------------------------------
-//  Update
+//
+//	Update
+//
 // -------------------------------------------------
 func (self *Detail) update(pages *tview.Pages, listItem *listdb.ListItem, common *Common) {
 	self.execute(pages, listItem, common, "Update record ?")
 }
 
 // -------------------------------------------------
-//  Delete
+//
+//	Delete
+//
 // -------------------------------------------------
 func (self *Detail) delete(pages *tview.Pages, listItem *listdb.ListItem, common *Common) {
 	self.execute(pages, listItem, common, "Delete record ?")
 }
 
 // -------------------------------------------------
-//  Insert
+//
+//	Insert
+//
 // -------------------------------------------------
 func (self *Detail) insert(pages *tview.Pages, listItem *listdb.ListItem, common *Common) {
 	self.execute(pages, listItem, common, "Insert record ?")
 }
 
 // -------------------------------------------------
-//  Connect DB
+//
+//	Connect DB
+//
 // -------------------------------------------------
 func (self *Detail) connectDB(common *Common) listdb.Manager {
 	manager := listdb.GetManager(common.databaseName)
@@ -187,7 +205,9 @@ func (self *Detail) connectDB(common *Common) listdb.Manager {
 }
 
 // -------------------------------------------------
-//  ListItem for update
+//
+//	ListItem for update
+//
 // -------------------------------------------------
 func (self *Detail) createListItem(id int, category string, field01 string, field02 string, note string) *listdb.ListItem {
 	listItem := new(listdb.ListItem)
@@ -200,7 +220,9 @@ func (self *Detail) createListItem(id int, category string, field01 string, fiel
 }
 
 // -------------------------------------------------
-//  detail body
+//
+//	detail body
+//
 // -------------------------------------------------
 func (self *Detail) detailBody(pages *tview.Pages, header *tview.Flex, footer *tview.Flex, common *Common) *tview.Flex {
 	isLastItem = false
@@ -380,7 +402,9 @@ func (self *Detail) detailBody(pages *tview.Pages, header *tview.Flex, footer *t
 }
 
 // -------------------------------------------------
-//  format screen
+//
+//	format screen
+//
 // -------------------------------------------------
 func (self *Detail) doformat(common *Common) tview.Primitive {
 	pages := tview.NewPages()

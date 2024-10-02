@@ -13,7 +13,9 @@ import (
 var isLast bool
 
 // -------------------------------------------------
-//  Table
+//
+//	Table
+//
 // -------------------------------------------------
 func (self *MainList) getTable(pages *tview.Pages, common *Common) {
 	manager := listdb.GetManager(common.databaseName)
@@ -57,7 +59,9 @@ func (self *MainList) getTable(pages *tview.Pages, common *Common) {
 }
 
 // -------------------------------------------------
-//  Category
+//
+//	Category
+//
 // -------------------------------------------------
 func (self *MainList) getCategory(pages *tview.Pages, common *Common) {
 	manager := listdb.GetManager(common.databaseName)
@@ -106,7 +110,9 @@ func (self *MainList) getCategory(pages *tview.Pages, common *Common) {
 }
 
 // -------------------------------------------------
-//  Search
+//
+//	Search
+//
 // -------------------------------------------------
 func (self *MainList) getSearch(pages *tview.Pages, common *Common) {
 	search := MyInputDialog(self.app, common.search, 40, 7, 2, 4, true).
@@ -127,7 +133,9 @@ func (self *MainList) getSearch(pages *tview.Pages, common *Common) {
 }
 
 // -------------------------------------------------
-//  Paging
+//
+//	Paging
+//
 // -------------------------------------------------
 func (self *MainList) firstPage(common *Common) bool {
 	return common.from == 1
@@ -156,7 +164,9 @@ func (self *MainList) priorPage(common *Common) {
 }
 
 // -------------------------------------------------
-//  List
+//
+//	List
+//
 // -------------------------------------------------
 func (self *MainList) getFieldsInfo(listdata []listdb.ListItem, common *Common) (int, []int) {
 	maxLength := 0
@@ -214,7 +224,9 @@ func (self *MainList) setList(list *tview.List, common *Common) (*tview.List, in
 }
 
 // -------------------------------------------------
-//  format screen
+//
+//	format screen
+//
 // -------------------------------------------------
 func isDataExist(common *Common) bool {
 	return common.tableName != ""

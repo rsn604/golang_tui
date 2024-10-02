@@ -251,6 +251,7 @@ func (f *MyTextArea) insertRune(r rune) {
 }
 
 // updateBuffers is update all buffers of MyTextView if any changes is happen.
+//
 //	TODO: for optimization - need update not all textViewIndex
 func (f *MyTextArea) updateBuffers() {
 	_, _, width, _ := f.GetInnerRect()
@@ -262,7 +263,7 @@ func (f *MyTextArea) updateBuffers() {
 }
 
 // cursorIndexLine return line in MyTextView.view with cursor
-//func (f MyTextArea) cursorIndexLine() int {
+// func (f MyTextArea) cursorIndexLine() int {
 func (f *MyTextArea) cursorIndexLine() int {
 	_, y, _, _ := f.GetInnerRect()
 	indexLine := f.cursor.y - y + f.view.lineOffset
