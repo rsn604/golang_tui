@@ -11,9 +11,9 @@ build:
 	@mkdir -p $(TARGET)
 	$(GOBUILD) -o $(MAIN_PROG) $(MAIN)
 	$(GOBUILD) -o $(LOAD_PROG) $(LOAD)
-	@chmod +x *.sh
 	@cp scripts/linux/listdbg.sh .
 	@cp scripts/linux/loaddb.sh .
+	@chmod +x *.sh
 	tar czvf $(TARGET)/$(MAIN_PROG).tgz $(MAIN_PROG) $(LOAD_PROG) csv db listdbg.sh loaddb.sh
 
 # ---------------------------------------------------
